@@ -13,6 +13,7 @@ function FoundItemsDirective() {
 	      foundItems: '<',
 	      onRemove: '&'
 	    },
+	    restrict: 'E',
 	    controller: NarrowItDownController,
 	    controllerAs: 'narrowIt',
 	    bindToController: true
@@ -26,14 +27,11 @@ function NarrowItDownController(MenuSearchService) {
 	var searcher = this;
 	
 	searcher.searchTerm = "";
-	searcher.found = [];
 	
 	searcher.search = function () {
-		searcher.found = [];
 		    var promise = MenuSearchService.getMatchedMenuItems(searcher.searchTerm);
 
 		    promise.then(function (response) {
-		      console.log(response);
 		      searcher.found = response;
 		    })
 		    .catch(function (error) {
