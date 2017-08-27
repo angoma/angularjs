@@ -12,7 +12,6 @@ function MenuDataService($http) {
   	    	method: "GET",
   	    	url: "https://davids-restaurant.herokuapp.com/categories.json"
   	    }).then(function (result) {
-  	    	console.log('getAllCategories', result.data);
   	    	return result.data;
   	    }); 		
   	};
@@ -23,7 +22,6 @@ function MenuDataService($http) {
     	    url: "https://davids-restaurant.herokuapp.com/menu_items.json",
     	    params: {category: categoryShortName}
     	}).then(function (result) {
-  	    	console.log('getItemsForCategory');
     		return result.data.menu_items;
     	}); 		
     };

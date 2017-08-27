@@ -35,7 +35,7 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
 	  params: {
 		  itemShortName: null
 	  },
-	  templateUrl: '/templates/items/itemsView.template.html',
+	  templateUrl: 'templates/items/itemsView.template.html',
 	  controller: "ItemsController as items",
 	  resolve: {
 		  shortName: ['$stateParams', function ($stateParams) {
